@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Manipulation</title>
+</head>
+<body>
+    <h2>Array Manipulation</h2>
+    
+    <input type="text" id="valueInput" placeholder="">
+    <button onclick="addValue()">Add Value to Array</button>
+
+    <h3>Perform Operations:</h3>
+    <button onclick="pushValue()">Push (Add to End)</button>
+    <button onclick="popValue()">Pop (Remove from End)</button>
+    <button onclick="shiftValue()">Shift (Remove from Start)</button>
+    <button onclick="unshiftValue()">Unshift (Add to Start)</button>
+
+    <h3>Array Contents:</h3>
+    <p id="arrayDisplay">[]</p>
+
+    <script>
+        let arr = []; // Initialize empty array
+
+        function updateDisplay() {
+            document.getElementById("arrayDisplay").innerText = "[" + arr.join(", ") + "]";//.join is for converting array into string by joiniing its elements with a separator
+                                                                                          
+        }
+
+        function addValue() {
+            let value = document.getElementById("valueInput").value.trim();
+            if (value !== "") {
+                arr.push(value); // Add value to the end
+                document.getElementById("valueInput").value = ""; // Clear input field
+                updateDisplay();
+            } else {
+                alert("Please enter a valid value!");
+            }
+        }
+
+        function pushValue() {
+            let value = prompt("Enter value to push:");
+            if (value !== null && value.trim() !== "") {
+                arr.push(value);
+                updateDisplay();
+            }
+        }
+
+        function popValue() {
+            if (arr.length > 0) {
+                arr.pop();
+                updateDisplay();
+            } else {
+                alert("Array is already empty!");
+            }
+        }
+
+        function shiftValue() {
+            if (arr.length > 0) {
+                arr.shift();
+                updateDisplay();
+            } else {
+                alert("Array is already empty!");
+            }
+        }
+
+        function unshiftValue() {
+            let value = prompt("Enter value to unshift:");
+            if (value !== null && value.trim() !== "") {
+                arr.unshift(value);
+                updateDisplay();
+            }
+        }
+    </script>
+</body>
+</html>

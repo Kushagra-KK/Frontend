@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Value in Paragraph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 250px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter a number:</h1>
+    <input type="number" id="inputBox" placeholder="Enter a number">
+    <button onclick="displayValue()">Show</button>
+    <p id="output">Your value will appear here.</p>
+    <script>
+        function displayValue() {
+            const value = document.getElementById("inputBox").value;
+            document.getElementById("output").innerText = value;
+        }
+    </script>
+</body>
+</html>

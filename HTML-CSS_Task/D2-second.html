@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name List</title>
+</head>
+<body>
+
+    <h2>Enter your name and see it added to the list!</h2>
+    <input type="text" id="nameInput">
+    <button onclick="addName()">Add Name</button>
+
+    <p id="nameList">Names entered: </p>
+
+    <script>
+        var names = []; // Corrected variable name to avoid conflict
+
+        function addName() {
+            var nameInput = document.getElementById("nameInput").value.trim(); // Changed variable name
+
+            if (nameInput !== "") {
+                names.push(nameInput); // Corrected variable name to 'names'
+                document.getElementById("nameInput").value = ""; // Clear input field
+                displayNames();
+            } else {
+                alert("Please enter a valid name!"); // Alert if input is empty
+            }
+        }
+
+        function displayNames() {
+            var nameString = "Names entered: " + names.join(", ");
+            document.getElementById("nameList").innerText = nameString;
+        }
+    </script>
+
+</body>
+</html>

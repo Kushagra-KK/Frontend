@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personalized Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 5px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter your name for a personalized greeting!</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="greetUser()">Greet Me</button>
+    <p id="greetingMessage"></p>
+
+    <script>
+        function greetUser() {
+            var name = document.getElementById("nameInput").value;
+            if (name.trim() !== "") {
+                document.getElementById("greetingMessage").innerText = "Hello, " + name + "! Welcome to the website!";
+            } else {
+                document.getElementById("greetingMessage").innerText = "Please enter your name.";
+            }
+        }
+    </script>
+
+</body>
+</html>
